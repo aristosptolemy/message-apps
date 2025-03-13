@@ -1,0 +1,28 @@
+.loginInput {
+  margin: 5px;
+  padding: 5px;
+}
+
+.top-window {
+  margin-top: 20px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.Select_custom {
+  width: 150px;
+}
+
+.top-title {
+  margin-top: 0;
+}
+
+.top-BG, .ToFrom {
+  margin: 20px;
+  border-radius: 8px;
+  width: 400px;
+  background-color: white;
+  padding: 25px;
+  justify-content:center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
+}
