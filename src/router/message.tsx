@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { groupsGet } from '../backend/server';
+import { groupsGet, IPAddress } from '../backend/server';
 import Select from 'react-select';
 import '../css/message.css';
 import { useRef } from "react";
@@ -13,7 +13,7 @@ const testdata = {"roomId":1,"message":"あ","username":"ARISTOS_SUB","userId":2
 
 const MessageDisplay = () => {
   const [input, setInput] = useState('');
-  const socket = new WebSocket('ws://localhost:8080');
+  const socket = new WebSocket(`ws://126.220.0.180:8000`);
   const acountName = sessionStorage.getItem('account') ?? '';
   const acountId = Number(sessionStorage.getItem('acountID') ?? '')
   const [messagedata, setMessagedata] = useState<any[]>([]);
@@ -196,11 +196,11 @@ const MessageDisplay = () => {
             <table className="messagetable" >
               <tbody>
                 {SelectRoomMessages.map((row,index) => (
-                  <tr key={index}>
-                    <div className="row-message">
-                      <td className="username">{usernameSerach(row)}</td>
-                      <td className="messages">{row.message}</td>
-                    </div>
+                  <tr key={index} className="row-message">
+                    
+                    <td className="username">{usernameSerach(row)}</td>
+                    <td className="messages">{row.message}</td>
+                  
                   </tr>
                 ))}
                 <tr ref={messagesEndRef} />

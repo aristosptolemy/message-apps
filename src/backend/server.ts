@@ -1,5 +1,7 @@
 
-const TOPURL = 'http://localhost:3000'
+
+export const IPAddress = '126.220.0.180';
+const TOPURL = `http://${IPAddress}:8000`
 
 
 export const registerUser = async (username: string, password: string, displayname: string) => {
