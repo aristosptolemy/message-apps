@@ -1,6 +1,6 @@
 
-export const IPAddress = '126.220.0.180';
-const TOPURL = `http://${IPAddress}:8000`
+export const IPAddress = 'aristos.server-on.net';
+const TOPURL = `https://${IPAddress}:8000`
 
 
 export const registerUser = async (username: string, password: string, displayname: string) => {

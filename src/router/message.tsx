@@ -13,7 +13,7 @@ const testdata = {"roomId":1,"message":"あ","username":"ARISTOS_SUB","userId":2
 
 const MessageDisplay = () => {
   const [input, setInput] = useState('');
-  const socket = new WebSocket(`ws://126.220.0.180:8000`);
+  const socket = new WebSocket(`wss://aristos.server-on.net:8000`);
   const acountName = sessionStorage.getItem('account') ?? '';
   const acountId = Number(sessionStorage.getItem('acountID') ?? '')
   const [messagedata, setMessagedata] = useState<any[]>([]);
