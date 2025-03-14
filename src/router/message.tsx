@@ -172,7 +172,7 @@ const MessageDisplay = () => {
           </a>
         </div>
         <div>
-          <h1>メッセージアプリ(勉強用)</h1>
+          <h1 className="Title">メッセージアプリ(勉強用)</h1>
         </div>
       </div>
       
