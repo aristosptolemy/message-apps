@@ -1,5 +1,4 @@
 
-
 export const IPAddress = '126.220.0.180';
 const TOPURL = `http://${IPAddress}:8000`
 
