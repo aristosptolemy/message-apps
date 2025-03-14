@@ -26,19 +26,23 @@ export default function LoginPage({ setisLoading }: SettingProps) {
   const navigate = useNavigate();
 
   const login = async () => {
-
-    toast.promise(
-      Login(UserName,PassWord),
-       {
-         loading: 'Verifying...',
-         success: () => {
-          navigate('/message');
-          sessionStorage.setItem("account", UserName)
-          sessionStorage.setItem("accountPass", PassWord)
-          return<b>ログインに成功しました!</b>},
-         error: <b>ログインに失敗しました.</b>,
-       }
-     );
+    if(UserName !== '' && PassWord !== ''){
+      toast.promise(
+        Login(UserName,PassWord),
+        {
+          loading: 'Verifying...',
+          success: () => {
+            navigate('/message');
+            sessionStorage.setItem("account", UserName)
+            sessionStorage.setItem("accountPass", PassWord)
+            return<b>ログインに成功しました!</b>},
+          error: <b>ログインに失敗しました.</b>,
+        }
+      );
+    }else {
+      toast.error("未入力があります")
+    }
+    
   }
 
   
