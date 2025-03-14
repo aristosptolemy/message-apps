@@ -5,11 +5,11 @@ import '../css/message.css';
 import { useRef } from "react";
 
 import RoomRelated from './newRoom';
+import AcountManegement from './acount';
 
 
 
 
-const testdata = {"roomId":1,"message":"あ","username":"ARISTOS_SUB","userId":2}
 
 const MessageDisplay = () => {
   const [input, setInput] = useState('');
@@ -27,6 +27,7 @@ const MessageDisplay = () => {
   const messagedataRef = useRef(messagedata);
 
   const [dialogisOpen, setisOpen] = useState(false)
+  const [acountDialogOpen, setisAcountOpen] = useState(false)
 
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
@@ -166,6 +167,11 @@ const MessageDisplay = () => {
           </a>
         </div>
         <div>
+          <a className="group-button" type="button" onClick={() => setisAcountOpen(true)}>
+            アカウント
+          </a>
+        </div>
+        <div>
           <h1>メッセージアプリ(勉強用)</h1>
         </div>
       </div>
@@ -176,6 +182,10 @@ const MessageDisplay = () => {
           <RoomRelated
             onCancel={() => setisOpen(false)}
             isOpen={dialogisOpen}
+          />
+          <AcountManegement 
+            onCancel={() => setisAcountOpen(false)}
+            isOpen={acountDialogOpen}
           />
           <div className="groupdatas">
             {groupdatas.map((row,index) => (

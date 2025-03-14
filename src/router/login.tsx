@@ -34,6 +34,7 @@ export default function LoginPage({ setisLoading }: SettingProps) {
          success: () => {
           navigate('/message');
           sessionStorage.setItem("account", UserName)
+          sessionStorage.setItem("accountPass", PassWord)
           return<b>ログインに成功しました!</b>},
          error: <b>ログインに失敗しました.</b>,
        }

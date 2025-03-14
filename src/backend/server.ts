@@ -31,6 +31,7 @@ export const Login = async (username: string, password: string) => {
     })
   });
   const data = await response.json();
+  //console.log(data)
   sessionStorage.setItem('acountID', data.id)
   return data.success
 };

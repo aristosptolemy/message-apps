@@ -8,6 +8,11 @@
   justify-content: space-around;
 }
 
+.menu-button-list {
+  display: flex;
+  justify-items: space-around;
+}
+
 h1 {
   margin: 0;
 }

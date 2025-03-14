@@ -26,3 +26,12 @@
   overflow: hidden;
   z-index: 20;
 }
+
+.new-password-title {
+  color: #16160e;
+}
+
+.new-password-area {
+  display: flex;
+  flex-flow: column;
+}
