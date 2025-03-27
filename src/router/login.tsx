@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Login } from '../backend/server';
+import { Login, testConnect } from '../backend/server';
 import toast from 'react-hot-toast';
 
 import '../css/login.css';
@@ -25,6 +25,10 @@ export default function LoginPage({ setisLoading }: SettingProps) {
   const [PassWord, setPassWord] = useState<string>('');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    //testConnect()
+  },[])
+
   const login = async () => {
     if(UserName !== '' && PassWord !== ''){
       toast.promise(
@@ -41,6 +45,13 @@ export default function LoginPage({ setisLoading }: SettingProps) {
       );
     }else {
       toast.error("未入力があります")
+    }
+    
+  }
+
+  const ResetPass = async () => {
+    if(UserName !== ''){
+      testConnect(UserName)
     }
     
   }
@@ -66,6 +77,9 @@ export default function LoginPage({ setisLoading }: SettingProps) {
               </a>
               <a className="buttonSt" id="main_back" type="button" onClick={() => navigate('/register')}>
                 新規登録
+              </a>
+              <a className="buttonSt" id="main_back" type="button" onClick={() => ResetPass()}>
+                パスワードリセット
               </a>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { groupsGet, IPAddress } from '../backend/server';
+import { groupsGet, Domain } from '../backend/server';
 import Select from 'react-select';
 import '../css/message.css';
 import { useRef } from "react";
@@ -77,7 +77,10 @@ const MessageDisplay = () => {
     //console.log(data)
     let result = ''
     if(data.group_id !== 3){
+      console.log(SelectRoomMembers)
+      console.log(data)
       const username = SelectRoomMembers.find(item => item.user_id === data.user_id)
+      console.log(username)
       result = username.display_name
     }else {
       result = '自分';
